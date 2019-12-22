@@ -5,12 +5,11 @@ import {
     View,
     StyleSheet,
 } from 'react-native'
-import PlanetImage from '../assets/planet.png';
 
-export default function CategoryListItem() {
+export default function CategoryListItem(props) {
     return <View style={styles.container}>
-        <Text style={styles.title}>Category</Text>
-        <Image style={styles.categoryImage} source={PlanetImage} />
+        <Text style={styles.title}>{props.title}</Text>
+        <Image style={styles.categoryImage} source={props.img} />
     </View>
 }
 
