@@ -6,6 +6,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <CategoryListItem />
+      <CategoryListItem />
+      <CategoryListItem />
     </View>
   );
 }
@@ -13,8 +15,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'stretch',
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 });
