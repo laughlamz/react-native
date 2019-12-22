@@ -7,8 +7,11 @@ import PlanetImage2 from './assets/planet2.png';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ScrollView>
+    <View>
+      <ScrollView 
+        style={{paddingLeft: 16, paddingRight: 16}}
+        contentContainerStyle={{backgroundColor: 'lightgreen'}}
+      >
         <CategoryListItem title="A" img={PlanetImage} />
         <CategoryListItem title="B" img={PlanetImage1} />
         <CategoryListItem title="C" img={PlanetImage2} />
@@ -19,14 +22,3 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'stretch',
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    paddingLeft: 16,
-    paddingRight: 16,
-  },
-});
