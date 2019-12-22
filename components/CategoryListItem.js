@@ -4,14 +4,20 @@ import {
     Text,
     View,
     StyleSheet,
+    TouchableOpacity,
+    Alert,
 } from 'react-native'
 
 export default function CategoryListItem(props) {
     const {category} = props;
-    return <View style={styles.container}>
-        <Text style={styles.title}>{category.name}</Text>
-        <Image style={styles.categoryImage} source={category.img} />
-    </View>
+    return (
+        <TouchableOpacity activeOpacity={0.5} onPress={() => {Alert.alert('Click!')}}>
+            <View style={styles.container}>
+                <Text style={styles.title}>{category.name}</Text>
+                <Image style={styles.categoryImage} source={category.img} />
+            </View>
+        </TouchableOpacity>
+    )
 }
 
 const styles = StyleSheet.create({
