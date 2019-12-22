@@ -7,9 +7,10 @@ import {
 } from 'react-native'
 
 export default function CategoryListItem(props) {
+    const {category} = props;
     return <View style={styles.container}>
-        <Text style={styles.title}>{props.title}</Text>
-        <Image style={styles.categoryImage} source={props.img} />
+        <Text style={styles.title}>{category.name}</Text>
+        <Image style={styles.categoryImage} source={category.img} />
     </View>
 }
 
