@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, Text, View } from 'react-native';
+import { StyleSheet, ScrollView, FlatList, Text, View } from 'react-native';
 import CategoryListItem from './components/CategoryListItem';
 import PlanetImage from './assets/planet.png';
 import PlanetImage1 from './assets/planet1.png';
@@ -22,15 +22,12 @@ export default class App extends Component {
     let {categories} = this.state;
 
     return (
-      <View>
-        <ScrollView style={{paddingLeft: 16, paddingRight: 16}}>
-          {
-            categories.map(category => (
-              <CategoryListItem key={category.id} category={category} />
-            ))
-          }
-        </ScrollView>
-      </View>
+      <FlatList 
+        data={categories}
+        renderItem={({ item }) => <CategoryListItem category={item} />}
+        keyExtractor={item => `${item.id}`}
+        contentContainerStyle={{paddingLeft: 16, paddingRight: 16}}
+      />
     );
   }
 }
